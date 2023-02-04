@@ -1,0 +1,39 @@
+.footer {
+  background-color: map-get($gray, 800);
+  padding-top: pxToRem(72);
+
+  @media screen and (min-width: map-get($breakpoints, "md")) {
+    > div {
+      grid-column: span 4;
+    }
+  }
+  a {
+    color: $white;
+    text-decoration: none;
+  }
+
+  &__navItem {
+    margin-bottom: pxToRem(20);
+    a {
+      color: map-get($gray, 100);
+    }
+  }
+
+  &__sub {
+    @media screen and (min-width: map-get($breakpoints, "md")) {
+      grid-column: span 12 !important;
+    }
+    margin-top: pxToRem(100);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid map-get($gray, 400);
+  }
+}
+
+.sn {
+  display: flex;
+  &__item {
+    padding: pxToRem(10) pxToRem(20);
+  }
+}

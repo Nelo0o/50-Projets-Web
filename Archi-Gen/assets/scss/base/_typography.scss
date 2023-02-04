@@ -1,0 +1,37 @@
+p  {
+  margin-bottom: pxToRem(20);
+}
+
+h1, .h1,
+h2, .h2,
+h3, .h3
+h4, .h4 {
+  font-family: map-get($font, 'heading');
+  color: $white;
+}
+
+h1, .h1 {
+  font-size: pxToRem(48);
+  line-height: 1.1;
+  font-weight: 700;
+  letter-spacing: pxToRem(2);
+  margin-top: 0;
+}
+
+h2, .h2 {
+  font-size: pxToRem(36);
+  line-height: 1.1;
+  font-weight: 700;
+  letter-spacing: pxToRem(2);
+}
+
+h3, .h3 {
+  font-size: pxToRem(20);
+  font-weight: 600;
+  letter-spacing: pxToRem(1);
+}
+
+h4, .h4 {
+  font-weight: 600;
+  letter-spacing: pxToRem(1);
+}

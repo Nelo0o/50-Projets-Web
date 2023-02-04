@@ -1,0 +1,74 @@
+.menu {
+  visibility: hidden;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 20;
+  background: $white;
+  color: map-get($gray, 800);
+  opacity: 0;
+  transition: 0.2s ease;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  a {
+    color: map-get($gray, 800);
+    text-decoration: none;
+  }
+
+  &__contact {
+    display: none;
+  }
+
+  .menu--open & {
+    visibility: visible;
+    opacity: 1;
+  }
+}
+
+.hamburger {
+  position: absolute;
+  top: 44px;
+  right: 10vw;
+  width: 48px;
+  height: 48px;
+  z-index: 30;
+  background: none;
+  border: none;
+  cursor: pointer;
+
+  &__line {
+    background-color: $white;
+    height: 2px;
+    width: 100%;
+    position: absolute;
+    right: 0;
+    transform-origin: right;
+    transition: 0.3s ease;
+
+    &--1 {
+      top: 33%;
+      transform: scaleX(0.5);
+    }
+    &--2 {
+      top: 66%;
+    }
+
+    .menu--open & {
+      background: map-get($gray, 800);
+      &--1 {
+        transform: rotate(45deg);
+        top: 85%;
+      }
+      &--2 {
+        transform: rotate(-45deg);
+        top: 15%;
+      }
+    }
+  }
+}

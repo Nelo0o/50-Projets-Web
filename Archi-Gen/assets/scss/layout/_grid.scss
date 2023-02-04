@@ -1,0 +1,86 @@
+// Taille minimum d'une colonne de la grille
+$min: 0;
+// Calcul pour la taille maximum d'une colonne de la grille
+$max: calc( ( #{ $container } - #{ $grid-gap } * ( #{ $grid-columns } - 1 ) ) / #{ $grid-columns } );
+
+.grid {
+  @media screen and (min-width: map-get($breakpoints, 'md')) {
+    display: grid;
+    gap: $grid-gap;
+    /**
+      * grid-auto-flow indique le fonctionnement de l'algorithme de placement automatique et
+      * détaille comment les éléments placés automatiquement « coulent » dans la grille.
+      * Avec la valeur "dense" l'algorithme utilisera une méthode de « regroupement dense »
+      * où il essaie de remplir les trous dans la grille si des éléments plus petits arrivent ensuite.
+      **/
+    grid: auto-flow dense / repeat( $grid-columns, minmax($min, $max));
+    justify-content: center;
+  }
+ 
+}
+
+// pour afficher la grille 
+
+:root {
+  --offset: #{ $wrapper };
+  --max-width: #{ $container };
+  --columns: 4;
+  --gutter: #{ $grid-gap };
+  --grid-color: hsla(191, 100%, 50%, 0.2);
+  --repeating-width: calc(100% / var(--columns));
+  --column-width: calc((100% / var(--columns)) - var(--gutter));
+  --background-width: calc(100% + var(--gutter));
+  --background-columns: repeating-linear-gradient(
+    to right,
+    var(--grid-color),
+    var(--grid-color) var(--column-width),
+    transparent var(--column-width),
+    transparent var(--repeating-width)
+  );
+}
+
+@media screen and (min-width: map-get($breakpoints, 'md')) {
+  :root {
+    --columns: 12;
+  }
+}
+
+body {
+  position: relative;
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0; right: 0; bottom: 0; left: 0;
+    margin-right: auto;
+    margin-left: auto;
+    width: calc(100% - (2 * var(--offset)));
+    max-width: var(--max-width);
+    min-height: 100vh;
+    background-image: var(--background-columns);
+    background-size: var(--background-width) 100%;
+    transform-origin: top center;
+    pointer-events: none;
+    z-index: 2;
+    opacity: 0;
+  }
+  &.showGrid::before {
+    opacity: 1;
+  }
+}
+
+.btnGrid {
+  display: none;
+  position: fixed;
+  transform: rotate(-90deg);
+  transform-origin: 0 0;
+  top: 300px;
+  left: 0;
+  z-index: 20;
+  padding: 10px 20px;
+  background-color: map-get($gray, 100);
+  color: map-get($gray, 800);
+  cursor: pointer;
+  @media screen and (min-width: map-get($breakpoints, 'md')) {
+    display: block; 
+  }
+}

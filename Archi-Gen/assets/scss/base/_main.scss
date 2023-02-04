@@ -1,0 +1,54 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: map-get($gray, 400);
+  color: map-get($gray, 100);
+  font-family: map-get($font, "body");
+  font-size: pxToRem(16);
+  line-height: 1.8;
+  font-weight: 300;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  color: $tonic;
+}
+
+address {
+  font-style: normal;
+}
+
+.list-unstyled {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.noscroll,
+.noscroll body {
+  overflow: hidden;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.wrapper {
+  padding-right: $wrapper;
+  padding-left: $wrapper;
+}

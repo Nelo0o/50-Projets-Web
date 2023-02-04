@@ -1,0 +1,106 @@
+section {
+  padding: pxToRem(60) 0;
+}
+
+.hero {
+  background-color: map-get($gray, 600);
+  position: relative;
+}
+
+.projects {
+  background: map-get($gray, 300) url("../../assets/svg/topography.svg");
+  background-size: 1000px;
+
+  &__header {
+    @media screen and (min-width: map-get($breakpoints, 'md')) {
+      grid-column: span 3;
+      grid-row: 1;
+    }
+  }
+  &__title {
+    margin-bottom: pxToRem(60);
+  }
+  &__carousel {
+    margin-left: 0 - $wrapper;
+    margin-right: 0 - $wrapper;
+    @media screen and (min-width: map-get($breakpoints, 'md')) {
+      grid-column: 4 / span 9;
+      grid-row: 1 / span 2;
+      @include outsideRight;
+    }
+  }
+  &__arrows {
+    @media screen and (min-width: map-get($breakpoints, 'md')) {
+      grid-column: span 3;
+      grid-row: 2;
+      align-self: end;
+    }
+  }
+}
+
+.actu {
+  @media screen and (min-width: map-get($breakpoints, 'md')) {
+    &__header {
+      grid-column: 1 / span 12;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+  }
+}
+
+.news {
+  margin-top: pxToRem(80);
+
+  @media screen and (min-width: map-get($breakpoints, 'md')) {
+    grid-column: span 4;
+  }
+
+  &__title {
+    a {
+      color: $white;
+      text-decoration: none;
+    }
+  }
+
+  &__cat {
+    a {
+      color: map-get($gray, 100);
+      text-decoration: none;
+      text-transform: uppercase;
+    }
+  }
+
+  &__link  {
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+  }
+
+  &__more {
+    background-color: map-get($gray, 400);
+    position: absolute;
+    bottom: 0; right: 0;
+    padding: pxToRem(10) 0 0 pxToRem(20);
+  }
+
+  &__img {
+    display: block;
+  }
+}
+
+.agency {
+  @media screen and (min-width: map-get($breakpoints, 'md')) {
+    &__header {
+      grid-column: 2 / span 5;
+    }
+    &__img {
+      grid-column: 7 / span 6;
+      @include outsideRight;
+    }
+    &__card {
+      grid-column: span 4;
+    }
+  }
+  
+}

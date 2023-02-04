@@ -1,0 +1,8 @@
+/**
+* Fonction qui permet de convertir les px en REM
+* par exemple : font-size: pxToRem(20); ==> font-size: 1.25rem;
+**/
+
+@function pxToRem($pixels) {
+  @return #{ $pixels / 16 }rem;
+}

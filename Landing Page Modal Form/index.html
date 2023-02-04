@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Landing Page Modal Form</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+<div class="container">
+    <div class="banner-text">
+        <h1>Nelo_ Creation</h1>
+        <p>Learn how to code</p>
+    </div>
+    <div class="btns">
+        <button class="btn login-btn">Login</button>
+        <button class="btn signup-btn">Sign Up</button>
+    </div>
+    <div class="form-container">
+        <div class="signup-form-wrapper modal">
+            <div class="x-btn sign-x">
+                &times;
+            </div>
+            <div class="form-header">
+                <h2>Nelo_ Creation</h2>
+                <h3>Join Me</h3>
+            </div>
+            <form action="#" class="form">
+                <div class="input-group">
+                    <i class="fas fa-user"></i>
+                    <label>
+                        <input type="text" placeholder="Username">
+                    </label>
+                </div>
+                <div class="input-group">
+                    <i class="far fa-envelope"></i>
+                    <label>
+                        <input type="email" placeholder="Email">
+                    </label>
+                </div>
+                <div class="input-group">
+                    <i class="fas fa-key"></i>
+                    <label>
+                        <input type="password" placeholder="Password">
+                    </label>
+                </div>
+                <button type="button">Sign Up</button>
+            </form>
+        </div>
+        <div class="login-form-wrapper modal">
+            <div class="x-btn login-x">
+                &times;
+            </div>
+            <div class="form-header">
+                <h2>Nelo_ Creation</h2>
+                <h3>Log In</h3>
+            </div>
+            <form action="#" class="form">
+                <div class="input-group">
+                    <i class="fas fa-user"></i>
+                    <label>
+                        <input type="text" placeholder="Username">
+                    </label>
+                </div>
+                <div class="input-group">
+                    <i class="fas fa-key"></i>
+                    <label>
+                        <input type="password" placeholder="Password">
+                    </label>
+                </div>
+                <button type="button">Login</button>
+            </form>
+        </div>
+    </div>
+</div>
+<script src="app.js"></script>
+</body>
+</html>

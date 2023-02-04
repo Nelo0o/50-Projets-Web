@@ -1,0 +1,31 @@
+.btn {
+  color: $tonic;
+  text-decoration: none;
+  text-transform: uppercase;
+  display: inline-block;
+
+  &--more {
+    &::after {
+      content: "+";
+      margin-left: pxToRem(10);
+    }
+  }
+
+  &--underline {
+    position: relative;
+    z-index: 1;
+    padding: pxToRem(2) pxToRem(4);
+    transition: color .3s ease;
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      z-index: -1;
+      background-color: $tonic;
+      height: 3px;
+      transition: height .3s ease;
+    }
+  }
+}
