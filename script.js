@@ -52,7 +52,7 @@ const folders = [
   "Slideshow-2",
   "Social-Media-Slideshow",
   "Tic-Tac-Toe",
-  "Toggle-Checkbox",
+  "Toggle-CheckBox",
   "Visit-Card"
 ];
 const list = document.querySelector("ul");
