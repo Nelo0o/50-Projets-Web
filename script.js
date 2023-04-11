@@ -58,7 +58,6 @@ const folders = [
 const list = document.querySelector("ul");
 
 folders.forEach((element) => {
-  console.log(element);
   const newLi = document.createElement("li");
   const newLink = document.createElement("a");
   newLink.text = element
