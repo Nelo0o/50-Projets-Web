@@ -21,7 +21,7 @@
 
 .card {
     width: 300px;
-    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.6)), url("img/bg.jpg") center no-repeat;
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.6)), url("images/bg.jpg") center no-repeat;
     background-size: cover;
     color: #fff;
     text-align: center;

@@ -1,11 +1,90 @@
+/* Style de base pour la table */
 table {
-    border-collapse: collapse;
+  border-collapse: collapse;
+  margin: auto;
+  margin-top: 50px;
 }
 
 td {
-    width: 100px;
-    height: 100px;
-    border: 1px solid black;
-    text-align: center;
-    vertical-align: middle;
+  border: 1px solid black;
+  width: 100px;
+  height: 100px;
+  font-size: 5em;
+  text-align: center;
+  vertical-align: middle;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Style pour les cellules cliquables */
+td:hover:not(.occupied) {
+  background-color: #ddd;
+}
+
+/* Style pour les cellules occupées */
+td.occupied {
+  background-color: #ddd;
+  cursor: default;
+}
+
+/* Style pour les X et les O */
+td.x:before {
+  content: "X";
+  color: #f44336;
+  animation: moveX 0.5s ease-in-out;
+}
+
+td.o:before {
+  content: "O";
+  color: #2196f3;
+  animation: moveO 0.5s ease-in-out;
+}
+
+/* Animations pour les X et les O */
+@keyframes moveX {
+  0% {
+    transform: translate(-50px, -50px) scale(0.5);
+    opacity: 0;
+  }
+  100% {
+    transform: translate(0, 0) scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes moveO {
+  0% {
+    transform: translate(50px, 50px) scale(0.5);
+    opacity: 0;
+  }
+  100% {
+    transform: translate(0, 0) scale(1);
+    opacity: 1;
+  }
+}
+
+/* Style pour le résultat */
+#result {
+  text-align: center;
+  font-size: 2em;
+  margin-top: 20px;
+}
+
+/* Style pour le bouton de redémarrage */
+button {
+  display: block;
+  margin: auto;
+  margin-top: 20px;
+  padding: 10px 20px;
+  font-size: 1.5em;
+  border: none;
+  background-color: #4caf50;
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Style pour l'effet de survol du bouton de redémarrage */
+button:hover {
+  background-color: #3e8e41;
 }

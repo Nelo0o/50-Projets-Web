@@ -1,10 +1,12 @@
 // Taille minimum d'une colonne de la grille
 $min: 0;
 // Calcul pour la taille maximum d'une colonne de la grille
-$max: calc( ( #{ $container } - #{ $grid-gap } * ( #{ $grid-columns } - 1 ) ) / #{ $grid-columns } );
+$max: calc(
+  (#{$container} - #{$grid-gap} * (#{$grid-columns} - 1)) / #{$grid-columns}
+);
 
 .grid {
-  @media screen and (min-width: map-get($breakpoints, 'md')) {
+  @media screen and (min-width: map-get($breakpoints, "md")) {
     display: grid;
     gap: $grid-gap;
     /**
@@ -13,19 +15,18 @@ $max: calc( ( #{ $container } - #{ $grid-gap } * ( #{ $grid-columns } - 1 ) ) / 
       * Avec la valeur "dense" l'algorithme utilisera une méthode de « regroupement dense »
       * où il essaie de remplir les trous dans la grille si des éléments plus petits arrivent ensuite.
       **/
-    grid: auto-flow dense / repeat( $grid-columns, minmax($min, $max));
+    grid: auto-flow dense / repeat($grid-columns, minmax($min, $max));
     justify-content: center;
   }
- 
 }
 
-// pour afficher la grille 
+// pour afficher la grille
 
 :root {
-  --offset: #{ $wrapper };
-  --max-width: #{ $container };
+  --offset: #{$wrapper};
+  --max-width: #{$container};
   --columns: 4;
-  --gutter: #{ $grid-gap };
+  --gutter: #{$grid-gap};
   --grid-color: hsla(191, 100%, 50%, 0.2);
   --repeating-width: calc(100% / var(--columns));
   --column-width: calc((100% / var(--columns)) - var(--gutter));
@@ -39,7 +40,7 @@ $max: calc( ( #{ $container } - #{ $grid-gap } * ( #{ $grid-columns } - 1 ) ) / 
   );
 }
 
-@media screen and (min-width: map-get($breakpoints, 'md')) {
+@media screen and (min-width: map-get($breakpoints, "md")) {
   :root {
     --columns: 12;
   }
@@ -48,9 +49,12 @@ $max: calc( ( #{ $container } - #{ $grid-gap } * ( #{ $grid-columns } - 1 ) ) / 
 body {
   position: relative;
   &::before {
-    content: '';
+    content: "";
     position: absolute;
-    top: 0; right: 0; bottom: 0; left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
     margin-right: auto;
     margin-left: auto;
     width: calc(100% - (2 * var(--offset)));
@@ -80,7 +84,7 @@ body {
   background-color: map-get($gray, 100);
   color: map-get($gray, 800);
   cursor: pointer;
-  @media screen and (min-width: map-get($breakpoints, 'md')) {
-    display: block; 
+  @media screen and (min-width: map-get($breakpoints, "md")) {
+    display: block;
   }
 }

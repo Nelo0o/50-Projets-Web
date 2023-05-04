@@ -19,7 +19,7 @@ body {
 .container {
     width: 150rem;
     height: 80rem;
-    background: rgb(88, 179, 253) url("img/bg.png") repeat-x 0 100%;
+    background: rgb(88, 179, 253) url("images/bg.png") repeat-x 0 100%;
     background-size: 150rem auto;
     display: grid;
     place-items: center;

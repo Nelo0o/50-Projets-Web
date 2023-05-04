@@ -21,6 +21,7 @@ const folders = [
   "Countdown",
   "Creative-Button",
   "CSS-Grid-Gallery",
+  "CSS-Loaders",
   "Dark-Mode",
   "Dashboard",
   "Decouvrez-Kyoto",
@@ -55,14 +56,37 @@ const folders = [
   "Toggle-CheckBox",
   "Visit-Card"
 ];
-const list = document.querySelector("ul");
 
 folders.forEach((element) => {
-  const newLi = document.createElement("li");
-  const newLink = document.createElement("a");
-  newLink.text = element
-  newLink.href = `./${element}/index.html`
-  newLi.appendChild(newLink)
-  list.appendChild(newLi)
+  const section = document.querySelector(".projects");
 
-});
+  const newCard = document.createElement("article");
+  const newContainerImg = document.createElement("div");
+  const newImg = document.createElement("img");
+  const newContainerInfos = document.createElement("div");
+  const newTitle = document.createElement("h2");
+  const newButton = document.createElement("button");
+  const newLink = document.createElement("a");
+
+  newCard.className = "card";
+
+  newContainerImg.className = "container-screen";
+  newImg.src = `./${element}/images/screenshot.png`;
+  newImg.alt = `${element} screenshot`;
+
+  newContainerInfos.className = "container-infos";
+  newTitle.innerText = element.replace(/-/g, " ");
+  newLink.innerText = "Preview";
+  newLink.href = `./${element}/index.html`;
+  newLink.target = "_blank";
+  newButton.appendChild(newLink);
+
+  newContainerImg.appendChild(newImg);
+  newContainerInfos.appendChild(newTitle);
+  newContainerInfos.appendChild(newButton);
+
+  newCard.appendChild(newContainerImg);
+  newCard.appendChild(newContainerInfos);
+
+  section.appendChild(newCard);
+})

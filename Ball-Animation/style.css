@@ -18,7 +18,7 @@ body {
 .wrapper {
     width: 70rem;
     aspect-ratio: 1;
-    background-image: url(./bg.png);
+    background-image: url("./images/bg.png");
     background-size: auto 70rem;
     border: 1rem solid red;
     position: relative;
