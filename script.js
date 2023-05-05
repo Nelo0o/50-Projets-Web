@@ -65,7 +65,6 @@ folders.forEach((element) => {
   const newImg = document.createElement("img");
   const newContainerInfos = document.createElement("div");
   const newTitle = document.createElement("h2");
-  const newButton = document.createElement("button");
   const newLink = document.createElement("a");
 
   newCard.className = "card";
@@ -79,11 +78,11 @@ folders.forEach((element) => {
   newLink.innerText = "Preview";
   newLink.href = `./${element}/index.html`;
   newLink.target = "_blank";
-  newButton.appendChild(newLink);
+  newLink.role = "button";
 
   newContainerImg.appendChild(newImg);
   newContainerInfos.appendChild(newTitle);
-  newContainerInfos.appendChild(newButton);
+  newContainerInfos.appendChild(newLink);
 
   newCard.appendChild(newContainerImg);
   newCard.appendChild(newContainerInfos);
