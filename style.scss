@@ -138,21 +138,6 @@ section {
         text-align: center;
       }
 
-      button {
-        width: 100px;
-        height: 40px;
-        font-size: 1rem;
-        color: white;
-        background: hsl(240, 95%, 8%);
-        border-radius: 7px;
-        cursor: pointer;
-        transition: background-color 0.3s ease;
-
-        &:hover {
-          background: #000097ff;
-        }
-      }
-
       @media screen and (max-width: 768px) {
         h2 {
           font-size: 1rem;

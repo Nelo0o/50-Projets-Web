@@ -119,19 +119,6 @@ section .card .container-infos {
 section .card .container-infos h2 {
   text-align: center;
 }
-section .card .container-infos button {
-  width: 100px;
-  height: 40px;
-  font-size: 1rem;
-  color: white;
-  background: hsl(240, 95%, 8%);
-  border-radius: 7px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-section .card .container-infos button:hover {
-  background: #000097;
-}
 @media screen and (max-width: 768px) {
   section .card .container-infos h2 {
     font-size: 1rem;
